@@ -25,7 +25,15 @@ class Program
             Console.WriteLine("14. Armstrong Number..");
             Console.WriteLine("15. Armstrong Number within range..");
             Console.WriteLine("16. Fibonacci Series..");
-            Console.WriteLine("17. Factors of Number.");
+            Console.WriteLine("17. Factorial of Number.");
+            Console.WriteLine("18. Factors of number.");
+            Console.WriteLine("19. Strong Number or not.");
+            Console.WriteLine("20. Power of Number.");
+            Console.WriteLine("21. Perfect Number..");
+            Console.WriteLine("22. Automorphic Number..");
+            Console.WriteLine("23. Harshad Number..");
+            Console.WriteLine("24. Abundant Number..");
+            Console.WriteLine("25. Friendly pair..");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -63,7 +71,23 @@ class Program
                     break;
                 case 16: Utility.FibonacciSeries();
                     break;
-                case 17:Utility.FactorialOfNumber();
+                case 17:Utility.FactorialOfNumber(10);
+                    break;
+                case 18: Utility.FactorsOfNumber();
+                    break;
+                case 19: Utility.StrongNumber();
+                    break;
+                case 20:Utility.PoweroFNumber();
+                    break;
+                case 21:Utility.PerfectNumber();
+                    break;
+                case 22: Utility.AuthomorphicNumber();
+                    break;
+                case 23:Utility.HarshadNumber();
+                    break;
+                case 24:Utility.AbdundantNumber();
+                    break;
+                case 25: Utility.FriendlyPair();
                     break;
             }
         }

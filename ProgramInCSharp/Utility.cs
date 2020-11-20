@@ -278,16 +278,187 @@ namespace ProgramInCSharp
             }
         }
 
-        public static void FactorialOfNumber()
+        public static int FactorialOfNumber(int number)
         {
-            int number = 5;
-            int factor = 1;
+            int factorialOfNumber = 1;
             for(int i = 1; i <=number; i++)
             {
-                factor = factor * i;
+                factorialOfNumber = factorialOfNumber * i;
             }
-            Console.WriteLine(factor);
+            Console.WriteLine(factorialOfNumber);
+            return factorialOfNumber;
         }
 
+        public static void FactorsOfNumber()
+        {
+            int number = 16;
+            for(int i = 2; i <= number/2; i++)
+            {
+                if(number % i == 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        public static void StrongNumber()
+        {
+            int checkNumber = 146;
+            int duplicateNumber = checkNumber;
+            int temp = 0;
+            int sumOfFactorial = 0;
+            while(checkNumber != 0)
+            {
+                temp = checkNumber % 10;
+                sumOfFactorial = sumOfFactorial + (FactorialOfNumber(temp));
+                checkNumber = checkNumber / 10;
+            }
+
+            if (sumOfFactorial == duplicateNumber)
+            {
+                Console.WriteLine("Strong Number.");
+            }
+            else
+            {
+                Console.WriteLine("Not a strong number.");
+            }
+        }
+
+        public static void PoweroFNumber()
+        {
+            int baseValue = 3;
+            int exponenet = 3;
+            int result = 1;
+            while(exponenet !=0)
+            {
+                result = result * baseValue;
+                exponenet--;
+            }
+            Console.WriteLine("Power of Number: "+result);
+        }
+
+        public static void PerfectNumber()
+        {
+            int number = 28;
+            int sum = 0;
+            for(int i = 1; i <= number/2; i++)
+            {
+                if(number % i == 0)
+                {
+                    sum = sum + i;
+                    Console.WriteLine(i);
+                }
+            }
+            Console.WriteLine(sum);
+            if (sum == number)
+            {
+                
+                Console.WriteLine("number is perfect number.");
+            }
+            else
+            {
+                Console.WriteLine("Number is not a perfect number..");
+            }   
+        }
+
+        public static void AuthomorphicNumber()
+        {
+            int number = 75;
+            int sqOfNumber = number * number;
+            int flag = 0;
+            while(number != 0)
+            {
+                if(number % 10 != sqOfNumber % 10)
+                {
+                    flag = 1;
+                    break;
+                }
+                number = number / 10;
+                sqOfNumber = sqOfNumber / 10;
+            }
+            if (flag == 0)
+            {
+                Console.WriteLine("Automorphic Number..");
+            }
+            else
+            {
+                Console.WriteLine("Not a Automorphic Number..");
+            }
+        }
+
+        public static void HarshadNumber()
+        {
+            int number = 19;
+            int temp = 0;
+            int sum = 0;
+            int duplicateNumber = number;
+            while(number != 0)
+            {
+                temp = number % 10;
+                sum = sum + temp;
+                number = number / 10;
+            }
+            if(duplicateNumber % sum == 0)
+            {
+                Console.WriteLine("Harshad Number..");
+            }
+            else
+            {
+                Console.WriteLine("not a Harshad Number..");
+            }
+        }
+
+        public static void AbdundantNumber()
+        {
+            int number = 12;
+            int sum = 0;
+            for (int i = 1; i <= number / 2; i++)
+            {
+                if (number % i == 0)
+                {
+                    sum = sum + i;
+                    Console.WriteLine(i);
+                }
+            }
+
+            if(sum > number)
+            {
+                Console.WriteLine("Abdundant Number..");
+            }
+            else
+            {
+                Console.WriteLine("Not an Abduntant Number..");
+            }
+        }
+
+        public static int FactorOfNumber(int number)
+        {
+            int sum = 0;
+            for (int i = 1; i <= number / 2; i++)
+            {
+                if (number % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            return sum;
+        }
+
+        public static void FriendlyPair()
+        {
+            int num = 221;
+            int num2 = 284;
+
+            int sumOfNum = FactorOfNumber(num);
+            int sumOfNum2 = FactorOfNumber(num2);
+            if(sumOfNum == num2 && sumOfNum2 == num)
+            {
+                Console.WriteLine("Friendly pair..");
+            }
+            else
+            {
+                Console.WriteLine("Not a friendly pair..");
+            }
+        }
     }
 }
