@@ -678,9 +678,29 @@ namespace ProgramInCSharp
             }
         }
 
+        public static int Factorial(int number)
+        {
+            int factorial = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
+
         public static void PermutationInClassroom()
         {
+            int numberOfStudents = 6;
+            int numberOfSeats = 5;
+            int ways = Factorial(numberOfStudents) / Factorial(numberOfStudents - numberOfSeats);
+            Console.WriteLine(ways);
+        }
 
+        public static void HandShakeProgram()
+        {
+            int numberOfPeople = 15;
+            int numberOfHandShakes = (numberOfPeople * (numberOfPeople - 1)) / 2;
+            Console.WriteLine(numberOfHandShakes);
         }
     }
 }

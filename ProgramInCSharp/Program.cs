@@ -44,6 +44,8 @@ class Program
             Console.WriteLine("33. Octal To Binary..");
             Console.WriteLine("34. Octal to Decimal..");
             Console.WriteLine("35. Quadrant In Coordinates..");
+            Console.WriteLine("36. Permutation of Classroom..");
+            Console.WriteLine("37. Handshake Program..");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -118,6 +120,10 @@ class Program
                 case 34:Utility.OctalToDecimail();
                     break;
                 case 35:Utility.QuadrantInCoordinates();
+                    break;
+                case 36:Utility.PermutationInClassroom();
+                    break;
+                case 37: Utility.HandShakeProgram();
                     break;
             }
         }
