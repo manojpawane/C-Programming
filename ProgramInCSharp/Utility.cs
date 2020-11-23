@@ -460,5 +460,227 @@ namespace ProgramInCSharp
                 Console.WriteLine("Not a friendly pair..");
             }
         }
+
+        public static void GcdOrHcf()
+        {
+            int n = 1;
+            int num1 = 10;
+            int num2 = 15;
+            if(num1 != num2)
+            {
+                while(n != 0)
+                {
+                    n = num1 % num2;
+                    if(n != 0)
+                    {
+                        num1 = num2;
+                        num2 = n;
+                    }
+                }
+                Console.WriteLine(num2);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input..");
+            }
+        }
+
+        public static void EuclideanAlgorithm(int a, int b)
+        {
+            if(a == 0)
+            {
+                Console.WriteLine(b); ;
+            }
+            else
+            {
+              EuclideanAlgorithm(b % a, a);
+            }
+        }
+
+        
+        public static void Lcm(int first, int second, int fact)
+        {
+            if(fact % first == 0 && fact % second == 0)
+            {
+                Console.WriteLine(fact);
+            }
+            else
+            {
+                fact = fact + first;
+                Lcm(first, second, fact);
+            }
+
+        }
+
+        public static void LcmFor(int first, int second)
+        {
+            Lcm(first, second, first);
+        }
+
+        public static void BinaryToDecimal()
+        {
+            long n = 10110;
+            int i = 0;
+            int decimalNum = 0;
+            int rem = 0;
+            int res = 0;
+            while(n != 0)
+            {
+                rem =(int)n % 10;
+                res =(int)(rem * Math.Pow(2, i));
+                i++;
+                decimalNum = decimalNum + res;
+                n = n / 10;
+            }
+            Console.WriteLine(decimalNum);
+        }
+
+        public static void BinaryToOctal()
+        {
+            long n = 10110;
+            int i = 0;
+            int decimalNum = 0;
+            int rem = 0;
+            int res = 0;
+            while (n != 0)
+            {
+                rem = (int)n % 10;
+                res = (int)(rem * Math.Pow(2, i));
+                i++;
+                decimalNum = decimalNum + res;
+                n = n / 10;
+            }
+
+            i = 1;
+            
+            int octal = 0;
+            rem = 0;
+            while(decimalNum != 0)
+            {
+                rem = decimalNum % 8;
+                octal = octal + (rem * i);
+                i = i * 10;
+                decimalNum = decimalNum / 8;
+            }
+
+            Console.WriteLine(octal);
+        }
+
+        public static void DecimalToBinary()
+        {
+            int num = 155;
+            int rem = 0;
+            int i = 1;
+            long Binary = 0;
+            while(num != 0)
+            {
+                rem = num % 2;
+                Binary = Binary + (rem * i);
+                i = i * 10;
+                num = num / 2;
+            }
+            Console.WriteLine(Binary);
+        }
+
+        public static void DecimalToOctal()
+        {
+            int num = 717;
+            int rem = 0;
+            int octal = 0;
+            int i = 1;
+            while(num != 0)
+            {
+                rem = num % 8;
+                octal = octal + (rem * i);
+                i = i * 10;
+                num = num / 8;
+            }
+            Console.WriteLine(octal);
+        }
+
+        public static void OctalToBinary()
+        {
+            int num = 26;
+            int rem = 0;
+            int temp = 0;
+            int i = 0;
+            int decimalNumber = 0;
+            while(num != 0 )
+            {
+                rem = num % 10;
+                temp =  rem * (int)(Math.Pow(8, i));
+                i++;
+                decimalNumber = decimalNumber + temp;
+                num = num / 10;
+            }
+            i = 1;
+            int remForDec = 0;
+            long binaryNumber = 0;
+            while(decimalNumber != 0)
+            {
+                remForDec = decimalNumber % 2;
+                binaryNumber = binaryNumber + (remForDec * i);
+                i = i * 10;
+                decimalNumber = decimalNumber / 2;
+            }
+            Console.WriteLine(binaryNumber);
+        }
+
+        public static void OctalToDecimail()
+        {
+            int num = 2012;
+            int rem = 0;
+            int temp = 0;
+            int i = 0;
+            int sum = 0;
+            while(num != 0)
+            {
+                rem = num % 10;
+                temp = rem * (int)Math.Pow(8, i);
+                i++;
+                sum = sum + temp;
+                num = num / 10;
+            }
+            Console.WriteLine(sum);
+        }
+
+        public static void QuadrantInCoordinates()
+        {
+            int x = 5;
+            int y = 10;
+            if(x > 0 && y > 0)
+            {
+                Console.WriteLine("Quadrant 1");
+            }
+            else if(x < 0 && y > 0)
+            {
+                Console.WriteLine("Quadrant 2");
+            }
+            else if(x < 0 && y < 0)
+            {
+                Console.WriteLine("Quadrant 3");
+            }
+            else if(x == 0)
+            {
+                Console.WriteLine("Lies on Y cordinate");
+            }
+            else if(y == 0)
+            {
+                Console.WriteLine("Lies on X coordinate");
+            }
+            else if(x > 0 && y < 0)
+            {
+                Console.WriteLine("Quadrant 4");
+            }
+            else
+            {
+                Console.WriteLine("Lies on origin");
+            }
+        }
+
+        public static void PermutationInClassroom()
+        {
+
+        }
     }
 }

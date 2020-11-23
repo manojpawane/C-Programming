@@ -34,6 +34,16 @@ class Program
             Console.WriteLine("23. Harshad Number..");
             Console.WriteLine("24. Abundant Number..");
             Console.WriteLine("25. Friendly pair..");
+            Console.WriteLine("26. Gcd Or Hcf");
+            Console.WriteLine("27. Gcd Or Hcf using euclidean");
+            Console.WriteLine("28. LCM of 2 Numbers..");
+            Console.WriteLine("29. Binary to Decimal..");
+            Console.WriteLine("30. Binary to Octal..");
+            Console.WriteLine("31. Decimal To Binary..");
+            Console.WriteLine("32.  Decimal To Octal..");
+            Console.WriteLine("33. Octal To Binary..");
+            Console.WriteLine("34. Octal to Decimal..");
+            Console.WriteLine("35. Quadrant In Coordinates..");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -88,6 +98,26 @@ class Program
                 case 24:Utility.AbdundantNumber();
                     break;
                 case 25: Utility.FriendlyPair();
+                    break;
+                case 26:Utility.GcdOrHcf();
+                    break;
+                case 27: Utility.EuclideanAlgorithm(5, 10);
+                    break;
+                case 28:Utility.LcmFor(4, 2);
+                    break;
+                case 29: Utility.BinaryToDecimal();
+                    break;
+                case 30:Utility.BinaryToOctal();
+                    break;
+                case 31:Utility.DecimalToBinary();
+                    break;
+                case 32: Utility.DecimalToOctal();
+                    break;
+                case 33:Utility.OctalToBinary();
+                    break;
+                case 34:Utility.OctalToDecimail();
+                    break;
+                case 35:Utility.QuadrantInCoordinates();
                     break;
             }
         }
