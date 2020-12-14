@@ -46,6 +46,18 @@ class Program
             Console.WriteLine("35. Quadrant In Coordinates..");
             Console.WriteLine("36. Permutation of Classroom..");
             Console.WriteLine("37. Handshake Program..");
+            Console.WriteLine("38. Addition of Two fractions..");
+            Console.WriteLine("39. Replace Zero with One's..");
+            Console.WriteLine("40. Expressed Sum of Two Prime Number..");
+            Console.WriteLine("41. Check Vowel");
+            Console.WriteLine("42. CharacterIsAlphabetOrNot");
+            Console.WriteLine("43. Area of circle");
+            Console.WriteLine("44. ASCII value of character..");
+            Console.WriteLine("45. Prime number in a range..");
+            Console.WriteLine("46. Print Plus and minus.");
+            Console.WriteLine("47. Replace string with underscore");
+            Console.WriteLine("48. Find digits in integer.");
+            Console.WriteLine("49. Number of days in month of year.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -124,6 +136,30 @@ class Program
                 case 36:Utility.PermutationInClassroom();
                     break;
                 case 37: Utility.HandShakeProgram();
+                    break;
+                case 38:Utility.AdditionOfTwoFraction();
+                    break;
+                case 39:Utility.Replace0With1v2();
+                    break;
+                case 40:Utility.ExpressedAsSumOfTwoPrimeNumber();
+                    break;
+                case 41:Utility.CheckVowel();
+                    break;
+                case 42:Utility.CharacterIsAlphabetOrNot();
+                    break;
+                case 43:Utility.AreaOfCircle();
+                    break;
+                case 44:Utility.ASCIIValueOfCharacter();
+                    break;
+                case 45:Utility.PrimeNumberBetweenMinAndMax();
+                    break;
+                case 46:Utility.PrintPlusAndMinus();
+                    break;
+                case 47:Utility.ReplaceStringWithUnderScore();
+                    break;
+                case 48:Utility.NumberOfDigitsInAnInteger();
+                    break;
+                case 49:Utility.ProgramOfNumberOfDays();
                     break;
             }
         }
