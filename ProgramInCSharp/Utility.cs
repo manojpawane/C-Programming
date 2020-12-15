@@ -983,5 +983,134 @@ namespace ProgramInCSharp
                 Console.WriteLine("Number of days 31.");
             }
         }
+
+        public static void ConvertNumberToWords()
+        {
+            Console.WriteLine("Incomplete program, need to work on it..");
+            //char[] num = "9923".ToCharArray();
+            //string[] single_digits = new string[]{ "zero", "one", "two",
+            //                               "three", "four", "five",
+            //                               "six", "seven", "eight",
+            //                               "nine"};
+
+            //string[] two_digits = new string[]{"", "ten", "eleven", "twelve",
+            //                           "thirteen", "fourteen",
+            //                           "fifteen", "sixteen", "seventeen",
+            //                           "eighteen", "nineteen"};
+
+            //string[] tens_multiple = new string[]{"", "", "twenty", "thirty",
+            //                              "forty", "fifty","sixty",
+            //                              "seventy", "eighty", "ninety"};
+
+            //string[] tens_power = new string[] { "hundred", "thousand" };
+
+            //int len = num.Length;
+            //if(len == 0)
+            //{
+            //    Console.WriteLine("Empty string.");
+            //    return;
+            //}
+            //if(len > 4)
+            //{
+            //    Console.WriteLine("Length more than 4 is not supported.");
+            //    return;
+            //}
+
+            //if(len == 1)
+            //{
+            //    Console.WriteLine(single_digits[num[0]-'0']);
+            //    return;
+            //}
+            //int x = 0;
+            //while(x < num.Length)
+            //{
+            //    if(len >= 3)
+            //    {
+            //        if(num[x]-'0'!=0)
+            //        {
+            //            Console.WriteLine(single_digits[num[x]-'0'] + " ");
+            //            Console.WriteLine(tens_power[len-3] + " ");
+            //        }
+            //        --len;
+            //    }
+            //    else
+            //    {
+            //        if(num[x]-'0' == 1)
+            //        {
+                        
+            //        }
+            //    }
+            //}
+
+        }
+
+        public static void ExactlyXDivisors()
+        {
+            Console.WriteLine("Enter the range.");
+            int range = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter exact number of divisor.");
+            int divisor = Convert.ToInt32(Console.ReadLine());
+            int divisorCount = 0;
+            for(int i = 1; i <= range; i++)
+            {
+                int count = 0;
+                for(int j = 1; j <= i; j++)
+                {
+                    if(i % j == 0)
+                    {
+                        count++;
+                        
+                    }
+                }
+                if(count == 3)
+                {
+                    Console.WriteLine(i+" ");
+                    divisorCount++;
+                }
+                if(divisorCount == divisor)
+                {
+                    return;
+                }
+            }
+        }
+
+        public static void SquareRootOfQuadraticEquation()
+        {
+            Console.WriteLine("Enter value of A.");
+            Double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter value of B.");
+            Double b = Convert.ToDouble(Console.ReadLine());
+
+
+            Console.WriteLine("Enter value of C.");
+            Double c = Convert.ToDouble(Console.ReadLine());
+
+            if (a == 0)
+            {
+                Console.WriteLine("A value cant be zero.");
+            }
+            else
+            {
+                double value = (Math.Pow(b, 2) - 4 * a * c);
+                Console.WriteLine("val: "+value);
+                double sqrt = Math.Sqrt(value);
+                if(value > 0)
+                {
+                    Console.WriteLine("2 Real roots.");
+                    Console.WriteLine((-b + sqrt)/(2 * a));
+                    Console.WriteLine((-b - sqrt) / (2 * a));
+                }
+                else if(value == 0)
+                {
+                    Console.WriteLine("One real root");
+                    Console.WriteLine(-b/(2*a));
+                }
+                else
+                {
+                    Console.WriteLine(-b / (2 * a)+ " + i"+ sqrt);
+                }
+            }
+        }
     }
 }

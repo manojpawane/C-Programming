@@ -58,6 +58,9 @@ class Program
             Console.WriteLine("47. Replace string with underscore");
             Console.WriteLine("48. Find digits in integer.");
             Console.WriteLine("49. Number of days in month of year.");
+            Console.WriteLine("50. Convert Number to words.");
+            Console.WriteLine("51. ExactlyXDivisors.");
+            Console.WriteLine("52. Square Root Of QuadraticEquation");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -160,6 +163,12 @@ class Program
                 case 48:Utility.NumberOfDigitsInAnInteger();
                     break;
                 case 49:Utility.ProgramOfNumberOfDays();
+                    break;
+                case 50:Utility.ConvertNumberToWords();
+                    break;
+                case 51:Utility.ExactlyXDivisors();
+                    break;
+                case 52:Utility.SquareRootOfQuadraticEquation();
                     break;
             }
         }
