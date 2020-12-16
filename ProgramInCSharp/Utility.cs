@@ -1112,5 +1112,183 @@ namespace ProgramInCSharp
                 }
             }
         }
+
+        public static void SmallestNumberInArray()
+        {
+            Console.WriteLine("Enter size of Array");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[n];
+            Console.WriteLine("Insert "+n+" numbers in array");
+            for(int i =0;i< numbers.Length;i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int min = numbers[0];
+            for(int i = 0; i< numbers.Length; i++)
+            {
+                if(numbers[i] < min)
+                {
+                    min = numbers[i];
+                }
+            }
+            Console.WriteLine("Minimum number in Array is: {0} ", min);
+        }
+
+        public static void SecondSmallestNumberInArray()
+        {
+            Console.WriteLine("Enter size of Array");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[n];
+            Console.WriteLine("Insert " + n + " numbers in array");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int min = numbers[0];
+            int SecondSmallest = numbers[0];
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                if(numbers[i] < min)
+                {
+                    min = numbers[i];
+                }
+                else if(numbers[i] < SecondSmallest && SecondSmallest != min)
+                {
+                    SecondSmallest = numbers[i];
+                }
+            }
+            Console.WriteLine("second smallest number in Array is: {0} ", SecondSmallest);
+        }
+
+        public static int[] AcceptElementsFromArray()
+        {
+            Console.WriteLine("Enter size of Array");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[n];
+            Console.WriteLine("Insert " + n + " numbers in array");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            return numbers;
+        }
+
+        public static void LargestNumberInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int largestElement = numbers[0];
+            for(int i = 1; i < numbers.Length; i++)
+            {
+                if(numbers[i] > largestElement)
+                {
+                    largestElement = numbers[i];
+                }
+            }
+            Console.WriteLine("Largest Number is array is:{0}", largestElement);
+        }
+
+        public static void LargestAndSmallestNumberInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int largestElement = numbers[0];
+            int smallestElement = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] > largestElement)
+                {
+                    largestElement = numbers[i];
+                }
+                if(numbers[i] < smallestElement) 
+                {
+                    smallestElement = numbers[i];
+                }
+            }
+            Console.WriteLine("Largest Number is array is:{0}", largestElement);
+            Console.WriteLine("Smallest Number is array is:{0}", smallestElement);
+        }
+
+        public static void SumOfElementsInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int sum = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                sum = sum + numbers[i];
+            }
+            Console.WriteLine("Sum of all elements in array is:{0} ", sum);
+        }
+
+        public static void ReverseTheArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int[] reverseNumbers = new int[numbers.Length];
+            int j = 0;
+            for(int i = numbers.Length-1; i >= 0; i--)
+            {
+                reverseNumbers[j] = numbers[i];
+                j++;
+            }
+            for (int i = 0; i < reverseNumbers.Length; i++)
+            {
+                Console.WriteLine(reverseNumbers[i]);
+            }
+        }
+
+        public static void SortArrayInHalfParts()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            for(int i = 0; i < numbers.Length-1; i++)
+            {
+                for(int j = i + 1; j < numbers.Length; j++)
+                {
+                    if(i < numbers.Length / 2)
+                    {
+                        if (numbers[j] < numbers[i])
+                        {
+                            int temp = numbers[j];
+                            numbers[j] = numbers[i];
+                            numbers[i] = temp;
+                        }
+                    }
+                    else
+                    {
+                        if (numbers[j] > numbers[i])
+                        {
+                            int temp = numbers[j];
+                            numbers[j] = numbers[i];
+                            numbers[i] = temp;
+                        }
+                    }
+
+                }
+            }
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i]+" ");
+            }
+            Console.WriteLine();
+        }
+
+        public static void SortingOfArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int j = i+1; j < numbers.Length; j++)
+                {
+                    if(numbers[i] > numbers[j])
+                    {
+                        int temp = numbers[i];
+                        numbers[i] = numbers[j];
+                        numbers[j] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i]+" ");
+            }
+            Console.WriteLine();
+        }
     }
 }

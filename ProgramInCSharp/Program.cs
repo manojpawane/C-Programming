@@ -61,6 +61,14 @@ class Program
             Console.WriteLine("50. Convert Number to words.");
             Console.WriteLine("51. ExactlyXDivisors.");
             Console.WriteLine("52. Square Root Of QuadraticEquation");
+            Console.WriteLine("53. Smallest Number in Array.");
+            Console.WriteLine("54. Second Smallest Number in Array.");
+            Console.WriteLine("55. Largest Number in array.");
+            Console.WriteLine("56. Largest and Smallest number in Array.");
+            Console.WriteLine("57. Sum of elements in array.");
+            Console.WriteLine("58. Reverse the array.");
+            Console.WriteLine("59. Sort Arrays in Half Parts.");
+            Console.WriteLine("60. Sorting of an Array.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -169,6 +177,22 @@ class Program
                 case 51:Utility.ExactlyXDivisors();
                     break;
                 case 52:Utility.SquareRootOfQuadraticEquation();
+                    break;
+                case 53:Utility.SmallestNumberInArray();
+                    break;
+                case 54:Utility.SecondSmallestNumberInArray();
+                    break;
+                case 55:Utility.LargestNumberInArray();
+                    break;
+                case 56:Utility.LargestAndSmallestNumberInArray();
+                    break;
+                case 57: Utility.SumOfElementsInArray();
+                    break;
+                case 58:Utility.ReverseTheArray();
+                    break;
+                case 59:Utility.SortArrayInHalfParts();
+                    break;
+                case 60:Utility.SortingOfArray();
                     break;
             }
         }
