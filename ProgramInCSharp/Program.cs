@@ -69,6 +69,9 @@ class Program
             Console.WriteLine("58. Reverse the array.");
             Console.WriteLine("59. Sort Arrays in Half Parts.");
             Console.WriteLine("60. Sorting of an Array.");
+            Console.WriteLine("61. Frequency of numbes in array.");
+            Console.WriteLine("62. Longest Palindrome in array.");
+            Console.WriteLine("63. Distinct elements in array");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -193,6 +196,12 @@ class Program
                 case 59:Utility.SortArrayInHalfParts();
                     break;
                 case 60:Utility.SortingOfArray();
+                    break;
+                case 61:Utility.FrequencyOfElementsInArray();
+                    break;
+                case 62:Utility.LongestPalindromeInArray();
+                    break;
+                case 63:Utility.DistinctElementInArray();
                     break;
             }
         }

@@ -1290,5 +1290,135 @@ namespace ProgramInCSharp
             }
             Console.WriteLine();
         }
+
+        public static void FrequencyOfElementsInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int[] freq = new int[numbers.Length];
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                freq[i] = 0;
+                for(int j = i + 1; j < numbers.Length; j++)
+                {
+                    if(numbers[i] > numbers[j])
+                    {
+                        int temp = numbers[i];
+                        numbers[i] = numbers[j];
+                        numbers[j] = temp;
+                    }
+                }
+            }
+
+            int temp1 = numbers[0];
+            int count = 0;
+            for(int j = 0; j < numbers.Length; j++)
+            {
+                if(numbers[j] == temp1)
+                {
+                    count++;
+                }
+                else
+                {
+                    Console.WriteLine(temp1+":"+count);
+                    temp1 = numbers[j];
+                    j--;
+                    count = 0;
+                }
+                if(j == numbers.Length-1)
+                {
+                    Console.WriteLine(temp1 + ":" + count);
+                }
+            }
+            Console.ReadKey();
+
+        }
+
+        public static void LongestPalindromeInArray()
+        {
+            Console.WriteLine("Enter the size of Array.");
+            int n = Convert.ToInt32(Console.ReadLine());
+            long[] numbers = new long[n];
+            Console.WriteLine("Enter elements in array.");
+            for(int i = 0; i< n; i++)
+            {
+                numbers[i] = Convert.ToInt64(Console.ReadLine());
+            }
+            
+            for(int i = 0; i< numbers.Length; i++)
+            {
+                for(int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] > numbers[i])
+                    {
+                        int temp = (int)numbers[j];
+                        numbers[j] = numbers[i];
+                        numbers[i] = temp;
+                    }
+                }
+            }
+            int flag1 = 0;
+            for (int j = 0; j < numbers.Length; j++)
+            {
+              
+                bool response = Utility.PalindromChecker((int)numbers[j]);
+                if (response)
+                {
+                    Console.WriteLine("Longest palindrome is:{0} ", numbers[j]);
+                    flag1 = 1;
+                    return;
+                }
+
+            }
+            if(flag1 == 0)
+            {
+                Console.WriteLine("There is no palindrome present in the array.");
+            }
+
+        }
+        
+
+        public static bool PalindromChecker(int number)
+        {
+            int rem = 0;
+            int temp = 0;
+            int duplicate = number;
+            while(number != 0)
+            {
+                rem = number % 10;
+                temp = (temp * 10) + rem;
+                number = number / 10;
+            }
+            if(duplicate == temp)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void DistinctElementInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int n = numbers.Length;
+            int res = 0;
+            for (int i = 0; i < n; i++)
+            {
+                int j;
+                for (j = 0; j < i; j++)
+                {
+                    if(numbers[i] == numbers[j])
+                    {
+                        break;
+                    }
+                }
+                if(i == j)
+                {
+                    res++;
+                }
+            }
+            Console.WriteLine(res);
+        }
     }
 }
