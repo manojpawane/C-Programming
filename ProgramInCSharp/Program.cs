@@ -72,6 +72,12 @@ class Program
             Console.WriteLine("61. Frequency of numbes in array.");
             Console.WriteLine("62. Longest Palindrome in array.");
             Console.WriteLine("63. Distinct elements in array");
+            Console.WriteLine("64. Repeating numbers in array.");
+            Console.WriteLine("65. Non Repeating numbers in array.");
+            Console.WriteLine("66. Removing duplicates elements from array.");
+            Console.WriteLine("67. Minimum scalar product of two arrays.");
+            Console.WriteLine("68. Maximum scalar product of two arrays.");
+            Console.WriteLine("69. Count of even and odd number.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -202,6 +208,18 @@ class Program
                 case 62:Utility.LongestPalindromeInArray();
                     break;
                 case 63:Utility.DistinctElementInArray();
+                    break;
+                case 64:Utility.RepeatingElementsInArray();
+                    break;
+                case 65:Utility.NonRepeatingElementsInArray();
+                    break;
+                case 66:Utility.RemovingDuplicateElementsInArray();
+                    break;
+                case 67:Utility.MinimumScalarProductOfTwoArray();
+                    break;
+                case 68:Utility.MaximumScalarProductOfTwoNumber();
+                    break;
+                case 69:Utility.CountOfEvenAndOddNumberInArray();
                     break;
             }
         }

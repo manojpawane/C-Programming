@@ -1403,10 +1403,10 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             int n = numbers.Length;
             int res = 0;
-            for (int i = 0; i < n; i++)
+            for(int i = 0; i < n; i++)
             {
                 int j;
-                for (j = 0; j < i; j++)
+                for(j = 0;j < i; j++)
                 {
                     if(numbers[i] == numbers[j])
                     {
@@ -1418,7 +1418,167 @@ namespace ProgramInCSharp
                     res++;
                 }
             }
-            Console.WriteLine(res);
+            Console.WriteLine("Total number of Distinct elements in array are:{0}", res);
+            Console.ReadKey();
+          //  Console.WriteLine(res);
+        }
+
+        public static void RepeatingElementsInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                for(int j = i +1; j < numbers.Length; j++)
+                {
+                    if(numbers[i] == numbers[j])
+                    {
+                        Console.Write(numbers[i]+" ");
+                    }
+                }
+            }
+            Console.ReadKey();
+        }
+
+        public static void NonRepeatingElementsInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            for(int i = 0; i <numbers.Length; i++)
+            {
+                int count = 0;
+                for(int j = 0; j < numbers.Length; j++)
+                {
+                    if(numbers[i] == numbers[j] && i != j)
+                    {
+                        count++;
+                    }
+                }
+                if(count == 0)
+                {
+                    Console.Write(numbers[i]+" ");
+                }
+            }
+            Console.ReadKey();
+        }
+
+        public static void RemovingDuplicateElementsInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int[] temp = new int[numbers.Length];
+            int k = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                int j;
+                for(j = 0; j < i; j++)
+                {
+                    if(numbers[i] == numbers[j])
+                    {
+                        break;
+                    }
+                }
+                if(i == j)
+                {
+                    temp[k] = numbers[i];
+                    k++;
+                }
+            }
+            for(int l =0; l < k; l++)
+            {
+                Console.Write(temp[l]+" ");
+            }
+            Console.ReadKey();
+        }
+
+        public static void MinimumScalarProductOfTwoArray()
+        {
+            int[] numbersOne = Utility.AcceptElementsFromArray();
+            int[] numbersTwo = Utility.AcceptElementsFromArray();
+            if(numbersOne.Length != numbersTwo.Length)
+            {
+                Console.WriteLine("Array length is not same.");
+                return;
+            }
+            numbersOne = Utility.SortArrayInAscendingOrder(numbersOne);
+            numbersTwo = Utility.SortArrayInDescendingOrder(numbersTwo);
+            int sum = 0;
+            for(int i = 0; i < numbersOne.Length; i++)
+            {
+                sum = sum + numbersOne[i] * numbersTwo[i];
+            }
+            Console.WriteLine("Minumum scalar product: {0}", sum);
+            Console.ReadKey();
+        }
+
+        public static void MaximumScalarProductOfTwoNumber()
+        {
+            int[] numbersOne = Utility.AcceptElementsFromArray();
+            int[] numbersTwo = Utility.AcceptElementsFromArray();
+            if (numbersOne.Length != numbersTwo.Length)
+            {
+                Console.WriteLine("Array length is not same.");
+                return;
+            }
+            numbersOne = Utility.SortArrayInAscendingOrder(numbersOne);
+            numbersTwo = Utility.SortArrayInAscendingOrder(numbersTwo);
+            int sum = 0;
+            for (int i = 0; i < numbersOne.Length; i++)
+            {
+                sum = sum + numbersOne[i] * numbersTwo[i];
+            }
+            Console.WriteLine("Maximum scalar product: {0}", sum);
+            Console.ReadKey();
+        }
+
+        public static int[] SortArrayInAscendingOrder(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] > numbers[i])
+                    {
+                        int temp = (int)numbers[j];
+                        numbers[j] = numbers[i];
+                        numbers[i] = temp;
+                    }
+                }
+            }
+            return numbers;
+        }
+
+        public static int[] SortArrayInDescendingOrder(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] < numbers[i])
+                    {
+                        int temp = (int)numbers[j];
+                        numbers[j] = numbers[i];
+                        numbers[i] = temp;
+                    }
+                }
+            }
+            return numbers;
+        }
+
+        public static void CountOfEvenAndOddNumberInArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int evenCount = 0;
+            int oddCount = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    evenCount++;
+                }
+                else
+                {
+                    oddCount++;
+                }
+            }
+            Console.WriteLine("Even count is "+evenCount+" and odd count is "+oddCount);
         }
     }
 }
