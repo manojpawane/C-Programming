@@ -1580,5 +1580,137 @@ namespace ProgramInCSharp
             }
             Console.WriteLine("Even count is "+evenCount+" and odd count is "+oddCount);
         }
+
+        public static void FindAllSymmetricPairs()
+        {
+
+        }
+
+        public static int[,] Accept2DArrayElements(int numberOfElements)
+        {
+            int[,] numbers = new int[numberOfElements, 2];
+            Console.WriteLine("Enter the elements in the array.");
+            for(int i = 0; i < numberOfElements; i++)
+            {
+                for(int j = 0; j <= 1; j++)
+                {
+                    numbers[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            return numbers;
+            //for (int i = 0; i < numberOfElements; i++)
+            //{
+            //    for(int j = 0; j <= 1; j++)
+            //    {
+            //        Console.Write(numbers[i,j]);
+            //    }
+            //    Console.Write(" ");
+            //}
+            //Console.WriteLine();
+        }
+
+        public static void SymmetricPairInArray()
+        {
+            Console.WriteLine("Enter number of elements you need.");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[,] numbers = Utility.Accept2DArrayElements(size);
+            int temp = 0;
+            for(int i = 0; i < size; i++)
+            {
+                for(int j = i + 1; j < size; j++)
+                {
+                    if (numbers[j, 0] < numbers[i, 0])
+                    {
+                        temp = numbers[j, 0];
+                        numbers[j, 0] = numbers[i, 0];
+                        numbers[i, 0] = temp;
+
+                        temp = numbers[j, 1];
+                        numbers[j, 1] = numbers[i, 1];
+                        numbers[i, 1] = temp;
+                    }
+                }
+                
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j <size; j++)
+                {
+                    if(numbers[i, 1] == numbers[j, 0] && numbers[i, 0] == numbers[j, 1]) 
+                    {
+                        Console.Write("("+numbers[j, 1]+","+numbers[i, 1]+")"+" ");
+                    }
+                }
+            }
+            Console.ReadKey();
+
+        }
+
+        /// <summary>
+        /// Pending program need to complete it tomorrow
+        /// </summary>
+        public static void MaximumProductOfSubArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int maxProduct = numbers[0];
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                for(int j = i +1; j < numbers.Length; j++)
+                {
+                    if((numbers[i] * numbers[j] * maxProduct) < maxProduct)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        maxProduct = maxProduct * (numbers[i] * numbers[j]);
+                    }
+                }
+            }
+            Console.WriteLine("Max product:{0}", maxProduct);
+        }
+
+        public static void DisjointArray()
+        {
+            int[] arrayOne = Utility.AcceptElementsFromArray();
+            int[] arrayTwo = Utility.AcceptElementsFromArray();
+            bool flag = false;
+            for (int i = 0; i < arrayOne.Length; i++)
+            {
+                for (int j = 0; j < arrayTwo.Length; j++)
+                {
+                    if(arrayOne[i] == arrayTwo[j])
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            if (flag)
+            {
+                Console.WriteLine("Array is not disjoint.");
+            }
+            else
+            {
+                Console.WriteLine("Array is disjoint.");
+            }
+        }
+
+        public static void DetermineTheArrayIsSubsetOfAnotherArray()
+        {
+            int[] arraysOne = Utility.AcceptElementsFromArray();
+            int[] arrayTwo = Utility.AcceptElementsFromArray();
+            if(arrayTwo.Length > arraysOne.Length)
+            {
+               Console.WriteLine("Invalid Array to determine subset of array.");
+               DetermineTheArrayIsSubsetOfAnotherArray();
+            }
+            else
+            {
+
+            }
+
+        }
+
     }
 }

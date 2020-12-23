@@ -78,6 +78,9 @@ class Program
             Console.WriteLine("67. Minimum scalar product of two arrays.");
             Console.WriteLine("68. Maximum scalar product of two arrays.");
             Console.WriteLine("69. Count of even and odd number.");
+            Console.WriteLine("70. Find all symmetric elements in array.");
+            Console.WriteLine("71. Max Product of Sub array.");
+            Console.WriteLine("72. To find arrays are disjoint or not.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -220,6 +223,12 @@ class Program
                 case 68:Utility.MaximumScalarProductOfTwoNumber();
                     break;
                 case 69:Utility.CountOfEvenAndOddNumberInArray();
+                    break;
+                case 70:Utility.SymmetricPairInArray();
+                    break;
+                case 71:Utility.MaximumProductOfSubArray();
+                    break;
+                case 72:Utility.DisjointArray();
                     break;
             }
         }
