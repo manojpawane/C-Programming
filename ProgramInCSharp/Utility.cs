@@ -1707,10 +1707,84 @@ namespace ProgramInCSharp
             }
             else
             {
+                bool flag = false;
+                for (int i = 0; i < arraysOne.Length; i++)
+                {
+                    int count = 0;
+                    for (int j = 0; j < arrayTwo.Length; j++)
+                    {
+                        if(arraysOne[i] != arrayTwo[j])
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            count++;
+                            if (count == arrayTwo.Length)
+                            {
+                                Console.WriteLine("Array 2 is subset of array 1.");
+                                flag = true;
+                            }
+                            i++;
+                        }
+                        
 
+                    }
+                }
+                if(flag == false)
+                {
+                    Console.WriteLine("Array 2 is not subset of array 1.");
+                }
+                Console.ReadKey();
             }
 
         }
 
+        public static void CheckIfAllTheNumbersOfArraysCanBeMadeEqual()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            bool flag = false;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                while(numbers[i] % 2 == 0)
+                {
+                    numbers[i] = numbers[i] / 2;
+                }
+                while (numbers[i] % 3 == 0)
+                {
+                    numbers[i] = numbers[i] / 3;
+                }
+            }
+            for(int i = 1; i < numbers.Length; i++)
+            {
+                if(numbers[i] != numbers[0])
+                {
+                     Console.WriteLine("Cannot be Equal.");
+                    flag = true;
+                }
+            }
+            if(flag  == false)
+            {
+                Console.WriteLine("can be equal.");
+            }
+            Console.ReadKey();
+            
+        }
+
+        public static void FindingMinimumSumOfAbsoluteDifferenceOfGivenArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            Array.Sort(numbers);
+            int n = numbers.Length;
+            int x = numbers[n / 2];
+            int sum = 0;
+            Console.WriteLine("x."+x);
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                sum = sum +  Math.Abs(numbers[i] - x);
+            }
+            Console.WriteLine(sum);
+            Console.ReadKey();
+        }
     }
 }

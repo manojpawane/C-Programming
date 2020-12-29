@@ -81,6 +81,9 @@ class Program
             Console.WriteLine("70. Find all symmetric elements in array.");
             Console.WriteLine("71. Max Product of Sub array.");
             Console.WriteLine("72. To find arrays are disjoint or not.");
+            Console.WriteLine("73. Determine whether array is subset of other array.");
+            Console.WriteLine("74. Check If All The Numbers Of Arrays Can Be Made Equal.");
+            Console.WriteLine("75. The sum of minimum absolute difference of the given array");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -230,6 +233,13 @@ class Program
                     break;
                 case 72:Utility.DisjointArray();
                     break;
+                case 73:Utility.DetermineTheArrayIsSubsetOfAnotherArray();
+                    break;
+                case 74:Utility.CheckIfAllTheNumbersOfArraysCanBeMadeEqual();
+                    break;
+                case 75:Utility.FindingMinimumSumOfAbsoluteDifferenceOfGivenArray();
+                    break;
+
             }
         }
         while (ch != 1 );
