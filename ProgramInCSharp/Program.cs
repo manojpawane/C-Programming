@@ -84,6 +84,8 @@ class Program
             Console.WriteLine("73. Determine whether array is subset of other array.");
             Console.WriteLine("74. Check If All The Numbers Of Arrays Can Be Made Equal.");
             Console.WriteLine("75. The sum of minimum absolute difference of the given array");
+            Console.WriteLine("76. Sort An Array According To Order Defined By Other Array");
+            Console.WriteLine("77. Replace each element by its rank in the given array");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -238,6 +240,10 @@ class Program
                 case 74:Utility.CheckIfAllTheNumbersOfArraysCanBeMadeEqual();
                     break;
                 case 75:Utility.FindingMinimumSumOfAbsoluteDifferenceOfGivenArray();
+                    break;
+                case 76:Utility.SortAnArrayAccordingToOrderDefinedByOtherArray();
+                    break;
+                case 77:Utility.ReplaceEachElementByItsRankInTheGivenArray();
                     break;
 
             }

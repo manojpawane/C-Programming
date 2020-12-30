@@ -1776,7 +1776,7 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             Array.Sort(numbers);
             int n = numbers.Length;
-            int x = numbers[n / 2];
+            int x = numbers[(int)n / 2];
             int sum = 0;
             Console.WriteLine("x."+x);
             for(int i = 0; i < numbers.Length; i++)
@@ -1785,6 +1785,70 @@ namespace ProgramInCSharp
             }
             Console.WriteLine(sum);
             Console.ReadKey();
+        }
+
+        public static void SortElementsByTheirFrequency()
+        {
+
+        }
+
+        public static void SortAnArrayAccordingToOrderDefinedByOtherArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int[] numbers1 = Utility.AcceptElementsFromArray();
+            for(int i = 0; i < numbers1.Length; i++)
+            {
+                for(int j = 0; j <numbers.Length; j++)
+                {
+                    if(numbers1[i] == numbers[j])
+                    {
+                        Console.Write(numbers[j]+" ");
+                    }
+                }
+            }
+
+            int count = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                count = 0;
+                for (int j = 0; j < numbers1.Length; j++)
+                {
+                    if (numbers[i] == numbers1[j])
+                    {
+                        count++;
+                    }
+                }
+                if(count == 0)
+                {
+                    Console.Write(numbers[i]+" ");
+                }
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+
+        public static void ReplaceEachElementByItsRankInTheGivenArray()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int[] numbers1 = numbers;
+            Array.Sort(numbers1);
+            int rank = 1;
+            for(int i =0; i < numbers1.Length; i++)
+            {
+                for(int j = 0; j < numbers.Length; j++)
+                {
+                    if(numbers[i] == numbers1[j])
+                    {
+                        numbers[i] = rank;
+                        rank++;
+                        break;
+                    }
+                }
+            }
+            for(int i =0; i < numbers1.Length; i++)
+            {
+                Console.Write(numbers1[i]+" ");
+            }
         }
     }
 }
