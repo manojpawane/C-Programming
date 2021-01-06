@@ -1830,25 +1830,136 @@ namespace ProgramInCSharp
         public static void ReplaceEachElementByItsRankInTheGivenArray()
         {
             int[] numbers = Utility.AcceptElementsFromArray();
-            int[] numbers1 = numbers;
-            Array.Sort(numbers1);
+            int[] numbers1 = new int[numbers.Length];
+            int[] numbers2 = new int[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers1[i] = numbers[i];
+            }
             int rank = 1;
-            for(int i =0; i < numbers1.Length; i++)
+            Array.Sort(numbers1);
+            for(int i = 0; i < numbers1.Length; i++)
             {
                 for(int j = 0; j < numbers.Length; j++)
                 {
-                    if(numbers[i] == numbers1[j])
+                    if(numbers1[i] == numbers[j])
                     {
-                        numbers[i] = rank;
+                        numbers2[j] = rank;
                         rank++;
-                        break;
                     }
                 }
             }
-            for(int i =0; i < numbers1.Length; i++)
+            for(int i =0; i < numbers2.Length; i++)
             {
-                Console.Write(numbers1[i]+" ");
+                Console.Write(numbers2[i]+" ");
             }
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+
+        public static void EquilibriumIndex()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            int median = numbers.Length / 2;
+            int leftSum = 0;
+            int rightSum = 0;
+            int count = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                if(i < median)
+                {
+                    leftSum = leftSum + numbers[i];
+                    count++;
+                }
+                if(i > median)
+                {
+                    rightSum = rightSum + numbers[i];
+                }
+            }
+            if(leftSum == rightSum)
+            {
+                Console.WriteLine("index:{0} ", count);
+            }
+            Console.WriteLine("left sum:{0} ", leftSum);
+            Console.WriteLine("right sum:{0} ", rightSum);
+        }
+
+        public static void RotatingArrayTowardsLeft()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            Console.WriteLine("Enter the key by which need to rotate.");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for(int i =0; i < n; i++)
+            {
+                int j, first = 0;
+                first = numbers[0];
+                for(j = 0; j < numbers.Length-1; j++)
+                {
+                    numbers[j] = numbers[j + 1];
+                }
+                numbers[j] = first;
+            }
+
+            for(int i =0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]+" ");
+                
+            }
+        }
+
+        public static void RotatingArrayTowardsRight()
+        {
+            int[] numbers = Utility.AcceptElementsFromArray();
+            Console.WriteLine("Enter the key by which need to rotate.");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                int j, last = 0;
+                last = numbers[numbers.Length - 1];
+                for (j = numbers.Length - 1; j > 0; j--)
+                {
+                    numbers[j] = numbers[j - 1];
+                }
+                numbers[j] = last;
+            }
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i] + " ");
+
+            }
+        }
+
+        public static void FindStringLength()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            char[] c = s.ToCharArray();
+            int length = 0;
+            for (int i = 0; i < c.Length; i++)
+            {
+                length++;
+            }
+            Console.WriteLine("lenght of string:{0}",length);
+        }
+
+        public static void ToggleEachCharacterInString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            string s1="";
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (Char.IsUpper(s[i]))
+                {
+                    s1 = s1 + Char.ToLower(s[i]);
+                }
+                else
+                {
+                    s1 = s1 + Char.ToUpper(s[i]);
+                }
+            }
+            Console.WriteLine(s1);
         }
     }
 }

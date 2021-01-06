@@ -86,6 +86,11 @@ class Program
             Console.WriteLine("75. The sum of minimum absolute difference of the given array");
             Console.WriteLine("76. Sort An Array According To Order Defined By Other Array");
             Console.WriteLine("77. Replace each element by its rank in the given array");
+            Console.WriteLine("78. Equilibrium Index.");
+            Console.WriteLine("79. Rotating array towards left.");
+            Console.WriteLine("80. Rotating array towards right.");
+            Console.WriteLine("81. Length of String.");
+            Console.WriteLine("82. Toggle each character in string.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -245,7 +250,16 @@ class Program
                     break;
                 case 77:Utility.ReplaceEachElementByItsRankInTheGivenArray();
                     break;
-
+                case 78:Utility.EquilibriumIndex();
+                    break;
+                case 79:Utility.RotatingArrayTowardsLeft();
+                    break;
+                case 80:Utility.RotatingArrayTowardsRight();
+                    break;
+                case 81:Utility.FindStringLength();
+                    break;
+                case 82:Utility.ToggleEachCharacterInString();
+                    break;
             }
         }
         while (ch != 1 );
