@@ -91,6 +91,16 @@ class Program
             Console.WriteLine("80. Rotating array towards right.");
             Console.WriteLine("81. Length of String.");
             Console.WriteLine("82. Toggle each character in string.");
+            Console.WriteLine("83. Number of vowels in string.");
+            Console.WriteLine("84. Remove vowels from string.");
+            Console.WriteLine("85. Check string palindrome or not.");
+            Console.WriteLine("86. Replace substring in string.");
+            Console.WriteLine("87. Reverse the string.");
+            Console.WriteLine("88. Remove Char Except Alphabet.");
+            Console.WriteLine("89. Remove space from string.");
+            Console.WriteLine("90. Replace brackets from expression.");
+            Console.WriteLine("91. Sum Of Numbers Of String");
+            Console.WriteLine("92. Capitialize first and last letter of word in string.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -259,6 +269,26 @@ class Program
                 case 81:Utility.FindStringLength();
                     break;
                 case 82:Utility.ToggleEachCharacterInString();
+                    break;
+                case 83:Utility.CountOfVowels();
+                    break;
+                case 84:Utility.RemoveVowelsFromString();
+                    break;
+                case 85:Utility.CheckStringPalindromeOrNote();
+                    break;
+                case 86:Utility.ReplaceSubStringInString();
+                    break;
+                case 87:Utility.ReverseTheString();
+                    break;
+                case 88:Utility.RemoveCharExceptAlphabet();
+                    break;
+                case 89:Utility.RemoveSpaceFromString();
+                    break;
+                case 90:Utility.ReplaceBracketsFromExpression();
+                    break;
+                case 91:Utility.SumOfNumbersOfString();
+                    break;
+                case 92: Utility.CapitalizeFirstAndLastLetterOfEachWordOfString();
                     break;
             }
         }

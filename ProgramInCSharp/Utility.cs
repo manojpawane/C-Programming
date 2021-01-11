@@ -1961,5 +1961,161 @@ namespace ProgramInCSharp
             }
             Console.WriteLine(s1);
         }
+
+        public static void CountOfVowels()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            char[] c = s.ToCharArray();
+            int vowel = 0;
+            for(int i = 0; i < c.Length; i++)
+            {
+                if(c[i] == 'a' || c[i] == 'e' || c[i] == 'i' || c[i] == 'o' || c[i] == 'u')
+                {
+                    vowel++;
+                }
+            }
+            Console.WriteLine("Total vowels are:{0}", vowel);
+        }
+
+        public static void RemoveVowelsFromString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            s = s.Replace("a","").Replace("e", "").Replace("i", "").Replace("0", "").Replace("u", "");
+            Console.WriteLine("string after replacing vowels:{0}",s);
+            Console.ReadKey();
+        }
+
+        public static void CheckStringPalindromeOrNote()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            string rev = "";
+            for(int i = s.Length-1; i >=0; i--)
+            {
+                rev = rev + s[i];
+            }
+            if(rev == s)
+            {
+                Console.WriteLine("String is palindrome.");
+            }
+            else
+            {
+                Console.WriteLine("String is not palindrome.");
+            }
+            Console.ReadKey();
+        }
+
+        public static void ReplaceSubStringInString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            Console.WriteLine("Enter string to replace.");
+            string oldString = Console.ReadLine();
+            Console.WriteLine("Enter new string to be replaced");
+            string newString = Console.ReadLine();
+            s = s.Replace(oldString, newString);
+            Console.WriteLine("String after replace:{0}", s);
+            Console.ReadKey();
+        }
+
+        public static void ReverseTheString()
+        {
+            Console.WriteLine("Enter the string");
+            string s = Console.ReadLine();
+            string rev = "";
+            for(int i = s.Length-1 ; i>=0; i--)
+            {
+                rev = rev + s[i];
+            }
+            Console.WriteLine("Reverse string: {0}", rev);
+            Console.ReadKey();
+        }
+
+        public static void RemoveCharExceptAlphabet()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            for (int i = 0; i < s.Length; i++)
+            {
+                
+                if (!Char.IsLetter(s[i]))
+                {
+                    s = s.Replace(s[i].ToString(), "");
+                }
+            }
+            Console.WriteLine("string after removing numbers:{0}", s);
+            Console.ReadKey();
+        }
+
+        public static void RemoveSpaceFromString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            string s2 = "";
+            char[] s1 = s.ToCharArray();
+            for(int i = 0; i < s1.Length; i++)
+            {
+                if(s1[i] != ' ')
+                {
+                    s2 = s2 + s1[i];
+                }
+            }
+
+            //s = new string(s1);
+            Console.WriteLine("New string after removing spaces:{0}",s2);
+            Console.ReadKey();
+        }
+
+        public static void ReplaceBracketsFromExpression()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            s = s.Replace("(", "").Replace(")", "").Replace("{", "").Replace("}", "").Replace("[", "").Replace("]", "");
+            Console.WriteLine("The string after replacing brackets is {0}", s);
+            Console.ReadKey();
+        }
+
+        public static void SumOfNumbersOfString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            char[] s1 = s.ToCharArray();
+            int sum = 0;
+            for (int i = 0; i < s1.Length; i++)
+            {
+                if (Char.IsDigit(s1[i]))
+                {
+                    Console.WriteLine(s1[i]+" ");
+                    sum = sum + Convert.ToInt32(Char.GetNumericValue(s1[i]));
+                }
+            }
+            Console.WriteLine("sum of digits in string is:{0}",sum);
+            Console.ReadKey();
+        }
+
+        public static void CapitalizeFirstAndLastLetterOfEachWordOfString()
+        {
+            Console.WriteLine("Enter the string.");
+            string s = Console.ReadLine();
+            string [] s1 = s.Split(" ");
+            string s3 = "";
+            for (int i = 0; i < s1.Length; i++)
+            {
+                int j = 0;
+                string s2 = "";
+                for (j = 0; j < s1[i].Length; j++)
+                {
+                    if (j == 0 || j == s1[i].Length - 2)
+                    {
+                        s1[j] = s1[j].ToUpper();
+                    }
+                    s2 = s2 + s1[j];
+                }
+                s3 = s3 + s2;
+            }
+            Console.WriteLine(s3);
+        }
     }
 }
