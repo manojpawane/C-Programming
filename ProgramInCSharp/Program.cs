@@ -101,6 +101,10 @@ class Program
             Console.WriteLine("90. Replace brackets from expression.");
             Console.WriteLine("91. Sum Of Numbers Of String");
             Console.WriteLine("92. Capitialize first and last letter of word in string.");
+            Console.WriteLine("93. Frequency of character in string.");
+            Console.WriteLine("94. Non repeating characters in string");
+            Console.WriteLine("95. Strings are anagram or not.");
+            Console.WriteLine("96. Replace Old String In A String");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -289,6 +293,14 @@ class Program
                 case 91:Utility.SumOfNumbersOfString();
                     break;
                 case 92: Utility.CapitalizeFirstAndLastLetterOfEachWordOfString();
+                    break;
+                case 93:Utility.FrequencyOfCharacterInString();
+                    break;
+                case 94:Utility.NonRepeatingCharacterInString();
+                    break;
+                case 95:Utility.StringsAreAnagramOrNot();
+                    break;
+                case 96:Utility.ReplaceOldStringInAString();
                     break;
             }
         }

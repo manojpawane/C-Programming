@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ProgramInCSharp
@@ -2111,11 +2112,118 @@ namespace ProgramInCSharp
                     {
                         s1[j] = s1[j].ToUpper();
                     }
+
                     s2 = s2 + s1[j];
                 }
                 s3 = s3 + s2;
             }
             Console.WriteLine(s3);
+        }
+
+        public static void FrequencyOfCharacterInString()
+        {
+            Console.WriteLine("Enter the string to check the frequency.");
+            string s1 = Console.ReadLine();
+            int count = 1;
+            for (int i = 0; i < s1.Length; i++)
+            {
+                count = 1;
+                int flag = 0;
+                for (int j = i+1; j < s1.Length; j++)
+                {
+                    if(s1[i] == s1[j])
+                    {
+                        count++;
+                    }
+                }
+                for(int k = 0; k < i; k++)
+                {
+                    if(s1[i] == s1[k])
+                    {
+                        flag = 1;
+                    }
+                }
+                if(flag == 0)
+                {
+                    Console.WriteLine(s1[i] + " " + count);
+                }
+            }
+            Console.ReadKey();
+        }
+
+        public static void NonRepeatingCharacterInString()
+        {
+            Console.WriteLine("Enter the string to check non repeating frequency.");
+            string s1 = Console.ReadLine();
+            int count = 1;
+            for (int i = 0; i < s1.Length; i++)
+            {
+                count = 1;
+                int flag = 0;
+                for (int j = i + 1; j < s1.Length; j++)
+                {
+                    if (s1[i] == s1[j])
+                    {
+                        count++;
+                    }
+                }
+                for (int k = 0; k < i; k++)
+                {
+                    if (s1[i] == s1[k])
+                    {
+                        flag = 1;
+                    }
+                }
+                if (flag == 0 && count == 1)
+                {
+                    Console.WriteLine(s1[i] + " " + count);
+                }
+            }
+            Console.ReadKey();
+        }
+
+        public static void StringsAreAnagramOrNot()
+        {
+            Console.WriteLine("Enter the string 1.");
+            string s1 = Console.ReadLine();
+            Console.WriteLine("Enter the string 2.");
+            string s2 = Console.ReadLine();
+            if(s1.Length == s1.Length)
+            {
+                char[] arr1 = s1.ToCharArray();
+                char[] arr2 = s2.ToCharArray();
+                Array.Sort(arr1);
+                Array.Sort(arr2);
+                if (arr1.SequenceEqual(arr2))
+                {
+                    Console.WriteLine("Strings are anagram.");
+                }
+                else
+                {
+                    Console.WriteLine("Strings are not a anagram.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Strings are not anagram.");
+            }
+            Console.ReadKey();
+        }
+
+        public static void ReplaceOldStringInAString()
+        {
+            Console.WriteLine("Enter the old string.");
+            string oldString = Console.ReadLine();
+
+            Console.WriteLine("Enter the string which need to replaced");
+            string replaceString = Console.ReadLine();
+
+            Console.WriteLine("Enter new string which need to replace");
+            string newString = Console.ReadLine();
+
+            string replacedString = oldString.Replace(replaceString, newString);
+            Console.WriteLine(replacedString);
+            Console.ReadKey();
         }
     }
 }
