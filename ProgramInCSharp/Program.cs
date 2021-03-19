@@ -105,6 +105,9 @@ class Program
             Console.WriteLine("94. Non repeating characters in string");
             Console.WriteLine("95. Strings are anagram or not.");
             Console.WriteLine("96. Replace Old String In A String");
+            Console.WriteLine("97. Union of 2 arrays");
+            Console.WriteLine("98. Addition of 2 Matrix");
+            Console.WriteLine("99. Bubble sort.");
             ch = Convert.ToInt32(Console.ReadLine());
             switch(ch)
             {
@@ -301,6 +304,14 @@ class Program
                 case 95:Utility.StringsAreAnagramOrNot();
                     break;
                 case 96:Utility.ReplaceOldStringInAString();
+                    break;
+                case 97: Utility.SetOperation();
+                    break;
+                case 98:Utility.AdditionOf2DArray();
+                    break;
+                case 99:Utility.BubbleSort();
+                    break;
+                case 100:Utility.SelectionSort();
                     break;
             }
         }

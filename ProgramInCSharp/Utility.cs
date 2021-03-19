@@ -1038,7 +1038,7 @@ namespace ProgramInCSharp
             //    {
             //        if(num[x]-'0' == 1)
             //        {
-                        
+
             //        }
             //    }
             //}
@@ -1052,23 +1052,23 @@ namespace ProgramInCSharp
             Console.WriteLine("Enter exact number of divisor.");
             int divisor = Convert.ToInt32(Console.ReadLine());
             int divisorCount = 0;
-            for(int i = 1; i <= range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 int count = 0;
-                for(int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++)
                 {
-                    if(i % j == 0)
+                    if (i % j == 0)
                     {
                         count++;
-                        
+
                     }
                 }
-                if(count == 3)
+                if (count == 3)
                 {
-                    Console.WriteLine(i+" ");
+                    Console.WriteLine(i + " ");
                     divisorCount++;
                 }
-                if(divisorCount == divisor)
+                if (divisorCount == divisor)
                 {
                     return;
                 }
@@ -1094,22 +1094,22 @@ namespace ProgramInCSharp
             else
             {
                 double value = (Math.Pow(b, 2) - 4 * a * c);
-                Console.WriteLine("val: "+value);
+                Console.WriteLine("val: " + value);
                 double sqrt = Math.Sqrt(value);
-                if(value > 0)
+                if (value > 0)
                 {
                     Console.WriteLine("2 Real roots.");
-                    Console.WriteLine((-b + sqrt)/(2 * a));
+                    Console.WriteLine((-b + sqrt) / (2 * a));
                     Console.WriteLine((-b - sqrt) / (2 * a));
                 }
-                else if(value == 0)
+                else if (value == 0)
                 {
                     Console.WriteLine("One real root");
-                    Console.WriteLine(-b/(2*a));
+                    Console.WriteLine(-b / (2 * a));
                 }
                 else
                 {
-                    Console.WriteLine(-b / (2 * a)+ " + i"+ sqrt);
+                    Console.WriteLine(-b / (2 * a) + " + i" + sqrt);
                 }
             }
         }
@@ -1119,15 +1119,15 @@ namespace ProgramInCSharp
             Console.WriteLine("Enter size of Array");
             int n = Convert.ToInt32(Console.ReadLine());
             int[] numbers = new int[n];
-            Console.WriteLine("Insert "+n+" numbers in array");
-            for(int i =0;i< numbers.Length;i++)
+            Console.WriteLine("Insert " + n + " numbers in array");
+            for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = Convert.ToInt32(Console.ReadLine());
             }
             int min = numbers[0];
-            for(int i = 0; i< numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if(numbers[i] < min)
+                if (numbers[i] < min)
                 {
                     min = numbers[i];
                 }
@@ -1147,13 +1147,13 @@ namespace ProgramInCSharp
             }
             int min = numbers[0];
             int SecondSmallest = numbers[0];
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if(numbers[i] < min)
+                if (numbers[i] < min)
                 {
                     min = numbers[i];
                 }
-                else if(numbers[i] < SecondSmallest && SecondSmallest != min)
+                else if (numbers[i] < SecondSmallest && SecondSmallest != min)
                 {
                     SecondSmallest = numbers[i];
                 }
@@ -1178,9 +1178,9 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             int largestElement = numbers[0];
-            for(int i = 1; i < numbers.Length; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
-                if(numbers[i] > largestElement)
+                if (numbers[i] > largestElement)
                 {
                     largestElement = numbers[i];
                 }
@@ -1199,7 +1199,7 @@ namespace ProgramInCSharp
                 {
                     largestElement = numbers[i];
                 }
-                if(numbers[i] < smallestElement) 
+                if (numbers[i] < smallestElement)
                 {
                     smallestElement = numbers[i];
                 }
@@ -1212,7 +1212,7 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             int sum = 0;
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 sum = sum + numbers[i];
             }
@@ -1224,7 +1224,7 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             int[] reverseNumbers = new int[numbers.Length];
             int j = 0;
-            for(int i = numbers.Length-1; i >= 0; i--)
+            for (int i = numbers.Length - 1; i >= 0; i--)
             {
                 reverseNumbers[j] = numbers[i];
                 j++;
@@ -1238,11 +1238,11 @@ namespace ProgramInCSharp
         public static void SortArrayInHalfParts()
         {
             int[] numbers = Utility.AcceptElementsFromArray();
-            for(int i = 0; i < numbers.Length-1; i++)
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
-                for(int j = i + 1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if(i < numbers.Length / 2)
+                    if (i < numbers.Length / 2)
                     {
                         if (numbers[j] < numbers[i])
                         {
@@ -1265,7 +1265,7 @@ namespace ProgramInCSharp
             }
             for (int i = 0; i < numbers.Length; i++)
             {
-                Console.Write(numbers[i]+" ");
+                Console.Write(numbers[i] + " ");
             }
             Console.WriteLine();
         }
@@ -1275,9 +1275,9 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             for (int i = 0; i < numbers.Length; i++)
             {
-                for (int j = i+1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if(numbers[i] > numbers[j])
+                    if (numbers[i] > numbers[j])
                     {
                         int temp = numbers[i];
                         numbers[i] = numbers[j];
@@ -1287,7 +1287,7 @@ namespace ProgramInCSharp
             }
             for (int i = 0; i < numbers.Length; i++)
             {
-                Console.Write(numbers[i]+" ");
+                Console.Write(numbers[i] + " ");
             }
             Console.WriteLine();
         }
@@ -1296,12 +1296,12 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             int[] freq = new int[numbers.Length];
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 freq[i] = 0;
-                for(int j = i + 1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if(numbers[i] > numbers[j])
+                    if (numbers[i] > numbers[j])
                     {
                         int temp = numbers[i];
                         numbers[i] = numbers[j];
@@ -1312,20 +1312,20 @@ namespace ProgramInCSharp
 
             int temp1 = numbers[0];
             int count = 0;
-            for(int j = 0; j < numbers.Length; j++)
+            for (int j = 0; j < numbers.Length; j++)
             {
-                if(numbers[j] == temp1)
+                if (numbers[j] == temp1)
                 {
                     count++;
                 }
                 else
                 {
-                    Console.WriteLine(temp1+":"+count);
+                    Console.WriteLine(temp1 + ":" + count);
                     temp1 = numbers[j];
                     j--;
                     count = 0;
                 }
-                if(j == numbers.Length-1)
+                if (j == numbers.Length - 1)
                 {
                     Console.WriteLine(temp1 + ":" + count);
                 }
@@ -1340,14 +1340,14 @@ namespace ProgramInCSharp
             int n = Convert.ToInt32(Console.ReadLine());
             long[] numbers = new long[n];
             Console.WriteLine("Enter elements in array.");
-            for(int i = 0; i< n; i++)
+            for (int i = 0; i < n; i++)
             {
                 numbers[i] = Convert.ToInt64(Console.ReadLine());
             }
-            
-            for(int i = 0; i< numbers.Length; i++)
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                for(int j = i + 1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
                     if (numbers[j] > numbers[i])
                     {
@@ -1360,7 +1360,7 @@ namespace ProgramInCSharp
             int flag1 = 0;
             for (int j = 0; j < numbers.Length; j++)
             {
-              
+
                 bool response = Utility.PalindromChecker((int)numbers[j]);
                 if (response)
                 {
@@ -1370,26 +1370,26 @@ namespace ProgramInCSharp
                 }
 
             }
-            if(flag1 == 0)
+            if (flag1 == 0)
             {
                 Console.WriteLine("There is no palindrome present in the array.");
             }
 
         }
-        
+
 
         public static bool PalindromChecker(int number)
         {
             int rem = 0;
             int temp = 0;
             int duplicate = number;
-            while(number != 0)
+            while (number != 0)
             {
                 rem = number % 10;
                 temp = (temp * 10) + rem;
                 number = number / 10;
             }
-            if(duplicate == temp)
+            if (duplicate == temp)
             {
                 return true;
             }
@@ -1404,36 +1404,36 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             int n = numbers.Length;
             int res = 0;
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 int j;
-                for(j = 0;j < i; j++)
+                for (j = 0; j < i; j++)
                 {
-                    if(numbers[i] == numbers[j])
+                    if (numbers[i] == numbers[j])
                     {
                         break;
                     }
                 }
-                if(i == j)
+                if (i == j)
                 {
                     res++;
                 }
             }
             Console.WriteLine("Total number of Distinct elements in array are:{0}", res);
             Console.ReadKey();
-          //  Console.WriteLine(res);
+            //  Console.WriteLine(res);
         }
 
         public static void RepeatingElementsInArray()
         {
             int[] numbers = Utility.AcceptElementsFromArray();
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                for(int j = i +1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if(numbers[i] == numbers[j])
+                    if (numbers[i] == numbers[j])
                     {
-                        Console.Write(numbers[i]+" ");
+                        Console.Write(numbers[i] + " ");
                     }
                 }
             }
@@ -1443,19 +1443,19 @@ namespace ProgramInCSharp
         public static void NonRepeatingElementsInArray()
         {
             int[] numbers = Utility.AcceptElementsFromArray();
-            for(int i = 0; i <numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 int count = 0;
-                for(int j = 0; j < numbers.Length; j++)
+                for (int j = 0; j < numbers.Length; j++)
                 {
-                    if(numbers[i] == numbers[j] && i != j)
+                    if (numbers[i] == numbers[j] && i != j)
                     {
                         count++;
                     }
                 }
-                if(count == 0)
+                if (count == 0)
                 {
-                    Console.Write(numbers[i]+" ");
+                    Console.Write(numbers[i] + " ");
                 }
             }
             Console.ReadKey();
@@ -1466,25 +1466,25 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             int[] temp = new int[numbers.Length];
             int k = 0;
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 int j;
-                for(j = 0; j < i; j++)
+                for (j = 0; j < i; j++)
                 {
-                    if(numbers[i] == numbers[j])
+                    if (numbers[i] == numbers[j])
                     {
                         break;
                     }
                 }
-                if(i == j)
+                if (i == j)
                 {
                     temp[k] = numbers[i];
                     k++;
                 }
             }
-            for(int l =0; l < k; l++)
+            for (int l = 0; l < k; l++)
             {
-                Console.Write(temp[l]+" ");
+                Console.Write(temp[l] + " ");
             }
             Console.ReadKey();
         }
@@ -1493,7 +1493,7 @@ namespace ProgramInCSharp
         {
             int[] numbersOne = Utility.AcceptElementsFromArray();
             int[] numbersTwo = Utility.AcceptElementsFromArray();
-            if(numbersOne.Length != numbersTwo.Length)
+            if (numbersOne.Length != numbersTwo.Length)
             {
                 Console.WriteLine("Array length is not same.");
                 return;
@@ -1501,7 +1501,7 @@ namespace ProgramInCSharp
             numbersOne = Utility.SortArrayInAscendingOrder(numbersOne);
             numbersTwo = Utility.SortArrayInDescendingOrder(numbersTwo);
             int sum = 0;
-            for(int i = 0; i < numbersOne.Length; i++)
+            for (int i = 0; i < numbersOne.Length; i++)
             {
                 sum = sum + numbersOne[i] * numbersTwo[i];
             }
@@ -1579,7 +1579,7 @@ namespace ProgramInCSharp
                     oddCount++;
                 }
             }
-            Console.WriteLine("Even count is "+evenCount+" and odd count is "+oddCount);
+            Console.WriteLine("Even count is " + evenCount + " and odd count is " + oddCount);
         }
 
         public static void FindAllSymmetricPairs()
@@ -1591,9 +1591,9 @@ namespace ProgramInCSharp
         {
             int[,] numbers = new int[numberOfElements, 2];
             Console.WriteLine("Enter the elements in the array.");
-            for(int i = 0; i < numberOfElements; i++)
+            for (int i = 0; i < numberOfElements; i++)
             {
-                for(int j = 0; j <= 1; j++)
+                for (int j = 0; j <= 1; j++)
                 {
                     numbers[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
@@ -1616,9 +1616,9 @@ namespace ProgramInCSharp
             int size = Convert.ToInt32(Console.ReadLine());
             int[,] numbers = Utility.Accept2DArrayElements(size);
             int temp = 0;
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
-                for(int j = i + 1; j < size; j++)
+                for (int j = i + 1; j < size; j++)
                 {
                     if (numbers[j, 0] < numbers[i, 0])
                     {
@@ -1631,16 +1631,16 @@ namespace ProgramInCSharp
                         numbers[i, 1] = temp;
                     }
                 }
-                
+
             }
 
             for (int i = 0; i < size; i++)
             {
-                for (int j = i + 1; j <size; j++)
+                for (int j = i + 1; j < size; j++)
                 {
-                    if(numbers[i, 1] == numbers[j, 0] && numbers[i, 0] == numbers[j, 1]) 
+                    if (numbers[i, 1] == numbers[j, 0] && numbers[i, 0] == numbers[j, 1])
                     {
-                        Console.Write("("+numbers[j, 1]+","+numbers[i, 1]+")"+" ");
+                        Console.Write("(" + numbers[j, 1] + "," + numbers[i, 1] + ")" + " ");
                     }
                 }
             }
@@ -1655,11 +1655,11 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             int maxProduct = numbers[0];
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                for(int j = i +1; j < numbers.Length; j++)
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if((numbers[i] * numbers[j] * maxProduct) < maxProduct)
+                    if ((numbers[i] * numbers[j] * maxProduct) < maxProduct)
                     {
                         break;
                     }
@@ -1681,7 +1681,7 @@ namespace ProgramInCSharp
             {
                 for (int j = 0; j < arrayTwo.Length; j++)
                 {
-                    if(arrayOne[i] == arrayTwo[j])
+                    if (arrayOne[i] == arrayTwo[j])
                     {
                         flag = true;
                     }
@@ -1701,10 +1701,10 @@ namespace ProgramInCSharp
         {
             int[] arraysOne = Utility.AcceptElementsFromArray();
             int[] arrayTwo = Utility.AcceptElementsFromArray();
-            if(arrayTwo.Length > arraysOne.Length)
+            if (arrayTwo.Length > arraysOne.Length)
             {
-               Console.WriteLine("Invalid Array to determine subset of array.");
-               DetermineTheArrayIsSubsetOfAnotherArray();
+                Console.WriteLine("Invalid Array to determine subset of array.");
+                DetermineTheArrayIsSubsetOfAnotherArray();
             }
             else
             {
@@ -1714,7 +1714,7 @@ namespace ProgramInCSharp
                     int count = 0;
                     for (int j = 0; j < arrayTwo.Length; j++)
                     {
-                        if(arraysOne[i] != arrayTwo[j])
+                        if (arraysOne[i] != arrayTwo[j])
                         {
                             break;
                         }
@@ -1728,11 +1728,11 @@ namespace ProgramInCSharp
                             }
                             i++;
                         }
-                        
+
 
                     }
                 }
-                if(flag == false)
+                if (flag == false)
                 {
                     Console.WriteLine("Array 2 is not subset of array 1.");
                 }
@@ -1745,9 +1745,9 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             bool flag = false;
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                while(numbers[i] % 2 == 0)
+                while (numbers[i] % 2 == 0)
                 {
                     numbers[i] = numbers[i] / 2;
                 }
@@ -1756,20 +1756,20 @@ namespace ProgramInCSharp
                     numbers[i] = numbers[i] / 3;
                 }
             }
-            for(int i = 1; i < numbers.Length; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
-                if(numbers[i] != numbers[0])
+                if (numbers[i] != numbers[0])
                 {
-                     Console.WriteLine("Cannot be Equal.");
+                    Console.WriteLine("Cannot be Equal.");
                     flag = true;
                 }
             }
-            if(flag  == false)
+            if (flag == false)
             {
                 Console.WriteLine("can be equal.");
             }
             Console.ReadKey();
-            
+
         }
 
         public static void FindingMinimumSumOfAbsoluteDifferenceOfGivenArray()
@@ -1779,10 +1779,10 @@ namespace ProgramInCSharp
             int n = numbers.Length;
             int x = numbers[(int)n / 2];
             int sum = 0;
-            Console.WriteLine("x."+x);
-            for(int i = 0; i < numbers.Length; i++)
+            Console.WriteLine("x." + x);
+            for (int i = 0; i < numbers.Length; i++)
             {
-                sum = sum +  Math.Abs(numbers[i] - x);
+                sum = sum + Math.Abs(numbers[i] - x);
             }
             Console.WriteLine(sum);
             Console.ReadKey();
@@ -1797,13 +1797,13 @@ namespace ProgramInCSharp
         {
             int[] numbers = Utility.AcceptElementsFromArray();
             int[] numbers1 = Utility.AcceptElementsFromArray();
-            for(int i = 0; i < numbers1.Length; i++)
+            for (int i = 0; i < numbers1.Length; i++)
             {
-                for(int j = 0; j <numbers.Length; j++)
+                for (int j = 0; j < numbers.Length; j++)
                 {
-                    if(numbers1[i] == numbers[j])
+                    if (numbers1[i] == numbers[j])
                     {
-                        Console.Write(numbers[j]+" ");
+                        Console.Write(numbers[j] + " ");
                     }
                 }
             }
@@ -1819,9 +1819,9 @@ namespace ProgramInCSharp
                         count++;
                     }
                 }
-                if(count == 0)
+                if (count == 0)
                 {
-                    Console.Write(numbers[i]+" ");
+                    Console.Write(numbers[i] + " ");
                 }
             }
             Console.WriteLine();
@@ -1839,20 +1839,20 @@ namespace ProgramInCSharp
             }
             int rank = 1;
             Array.Sort(numbers1);
-            for(int i = 0; i < numbers1.Length; i++)
+            for (int i = 0; i < numbers1.Length; i++)
             {
-                for(int j = 0; j < numbers.Length; j++)
+                for (int j = 0; j < numbers.Length; j++)
                 {
-                    if(numbers1[i] == numbers[j])
+                    if (numbers1[i] == numbers[j])
                     {
                         numbers2[j] = rank;
                         rank++;
                     }
                 }
             }
-            for(int i =0; i < numbers2.Length; i++)
+            for (int i = 0; i < numbers2.Length; i++)
             {
-                Console.Write(numbers2[i]+" ");
+                Console.Write(numbers2[i] + " ");
             }
             Console.WriteLine();
             Console.ReadKey();
@@ -1865,19 +1865,19 @@ namespace ProgramInCSharp
             int leftSum = 0;
             int rightSum = 0;
             int count = 0;
-            for(int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if(i < median)
+                if (i < median)
                 {
                     leftSum = leftSum + numbers[i];
                     count++;
                 }
-                if(i > median)
+                if (i > median)
                 {
                     rightSum = rightSum + numbers[i];
                 }
             }
-            if(leftSum == rightSum)
+            if (leftSum == rightSum)
             {
                 Console.WriteLine("index:{0} ", count);
             }
@@ -1890,21 +1890,21 @@ namespace ProgramInCSharp
             int[] numbers = Utility.AcceptElementsFromArray();
             Console.WriteLine("Enter the key by which need to rotate.");
             int n = Convert.ToInt32(Console.ReadLine());
-            for(int i =0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 int j, first = 0;
                 first = numbers[0];
-                for(j = 0; j < numbers.Length-1; j++)
+                for (j = 0; j < numbers.Length - 1; j++)
                 {
                     numbers[j] = numbers[j + 1];
                 }
                 numbers[j] = first;
             }
 
-            for(int i =0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.WriteLine(numbers[i]+" ");
-                
+                Console.WriteLine(numbers[i] + " ");
+
             }
         }
 
@@ -1941,14 +1941,14 @@ namespace ProgramInCSharp
             {
                 length++;
             }
-            Console.WriteLine("lenght of string:{0}",length);
+            Console.WriteLine("lenght of string:{0}", length);
         }
 
         public static void ToggleEachCharacterInString()
         {
             Console.WriteLine("Enter the string.");
             string s = Console.ReadLine();
-            string s1="";
+            string s1 = "";
             for (int i = 0; i < s.Length; i++)
             {
                 if (Char.IsUpper(s[i]))
@@ -1969,9 +1969,9 @@ namespace ProgramInCSharp
             string s = Console.ReadLine();
             char[] c = s.ToCharArray();
             int vowel = 0;
-            for(int i = 0; i < c.Length; i++)
+            for (int i = 0; i < c.Length; i++)
             {
-                if(c[i] == 'a' || c[i] == 'e' || c[i] == 'i' || c[i] == 'o' || c[i] == 'u')
+                if (c[i] == 'a' || c[i] == 'e' || c[i] == 'i' || c[i] == 'o' || c[i] == 'u')
                 {
                     vowel++;
                 }
@@ -1983,8 +1983,8 @@ namespace ProgramInCSharp
         {
             Console.WriteLine("Enter the string.");
             string s = Console.ReadLine();
-            s = s.Replace("a","").Replace("e", "").Replace("i", "").Replace("0", "").Replace("u", "");
-            Console.WriteLine("string after replacing vowels:{0}",s);
+            s = s.Replace("a", "").Replace("e", "").Replace("i", "").Replace("0", "").Replace("u", "");
+            Console.WriteLine("string after replacing vowels:{0}", s);
             Console.ReadKey();
         }
 
@@ -1993,11 +1993,11 @@ namespace ProgramInCSharp
             Console.WriteLine("Enter the string.");
             string s = Console.ReadLine();
             string rev = "";
-            for(int i = s.Length-1; i >=0; i--)
+            for (int i = s.Length - 1; i >= 0; i--)
             {
                 rev = rev + s[i];
             }
-            if(rev == s)
+            if (rev == s)
             {
                 Console.WriteLine("String is palindrome.");
             }
@@ -2026,7 +2026,7 @@ namespace ProgramInCSharp
             Console.WriteLine("Enter the string");
             string s = Console.ReadLine();
             string rev = "";
-            for(int i = s.Length-1 ; i>=0; i--)
+            for (int i = s.Length - 1; i >= 0; i--)
             {
                 rev = rev + s[i];
             }
@@ -2040,7 +2040,7 @@ namespace ProgramInCSharp
             string s = Console.ReadLine();
             for (int i = 0; i < s.Length; i++)
             {
-                
+
                 if (!Char.IsLetter(s[i]))
                 {
                     s = s.Replace(s[i].ToString(), "");
@@ -2056,16 +2056,16 @@ namespace ProgramInCSharp
             string s = Console.ReadLine();
             string s2 = "";
             char[] s1 = s.ToCharArray();
-            for(int i = 0; i < s1.Length; i++)
+            for (int i = 0; i < s1.Length; i++)
             {
-                if(s1[i] != ' ')
+                if (s1[i] != ' ')
                 {
                     s2 = s2 + s1[i];
                 }
             }
 
             //s = new string(s1);
-            Console.WriteLine("New string after removing spaces:{0}",s2);
+            Console.WriteLine("New string after removing spaces:{0}", s2);
             Console.ReadKey();
         }
 
@@ -2088,11 +2088,11 @@ namespace ProgramInCSharp
             {
                 if (Char.IsDigit(s1[i]))
                 {
-                    Console.WriteLine(s1[i]+" ");
+                    Console.WriteLine(s1[i] + " ");
                     sum = sum + Convert.ToInt32(Char.GetNumericValue(s1[i]));
                 }
             }
-            Console.WriteLine("sum of digits in string is:{0}",sum);
+            Console.WriteLine("sum of digits in string is:{0}", sum);
             Console.ReadKey();
         }
 
@@ -2100,7 +2100,7 @@ namespace ProgramInCSharp
         {
             Console.WriteLine("Enter the string.");
             string s = Console.ReadLine();
-            string [] s1 = s.Split(" ");
+            string[] s1 = s.Split(" ");
             string s3 = "";
             for (int i = 0; i < s1.Length; i++)
             {
@@ -2129,21 +2129,21 @@ namespace ProgramInCSharp
             {
                 count = 1;
                 int flag = 0;
-                for (int j = i+1; j < s1.Length; j++)
+                for (int j = i + 1; j < s1.Length; j++)
                 {
-                    if(s1[i] == s1[j])
+                    if (s1[i] == s1[j])
                     {
                         count++;
                     }
                 }
-                for(int k = 0; k < i; k++)
+                for (int k = 0; k < i; k++)
                 {
-                    if(s1[i] == s1[k])
+                    if (s1[i] == s1[k])
                     {
                         flag = 1;
                     }
                 }
-                if(flag == 0)
+                if (flag == 0)
                 {
                     Console.WriteLine(s1[i] + " " + count);
                 }
@@ -2188,7 +2188,7 @@ namespace ProgramInCSharp
             string s1 = Console.ReadLine();
             Console.WriteLine("Enter the string 2.");
             string s2 = Console.ReadLine();
-            if(s1.Length == s1.Length)
+            if (s1.Length == s1.Length)
             {
                 char[] arr1 = s1.ToCharArray();
                 char[] arr2 = s2.ToCharArray();
@@ -2223,6 +2223,241 @@ namespace ProgramInCSharp
 
             string replacedString = oldString.Replace(replaceString, newString);
             Console.WriteLine(replacedString);
+            Console.ReadKey();
+        }
+
+        public static void SetOperation()
+        {
+            int ch = 0;
+            do
+            {
+                Console.WriteLine("1. Exit");
+                Console.WriteLine("2. Union");
+                Console.WriteLine("3. Intersection");
+                Console.WriteLine("4. Difference");
+                ch = Convert.ToInt32(Console.ReadLine());
+                switch (ch)
+                {
+                    case 2:
+                        Utility.Union();
+                        break;
+                    case 3:
+                        Utility.Intersection();
+                        break;
+                    case 4:
+                        Utility.Difference();
+                        break;
+                }
+            }
+            while (ch != 1);
+        }
+
+        public static void Union()
+        {
+            int[] arrayOne = Utility.AcceptElementsFromArray();
+            int[] arrayTwo = Utility.AcceptElementsFromArray();
+            int[] resultArray = new int[arrayOne.Length + arrayTwo.Length];
+            int l = 0;
+            for (int i = 0; i < arrayOne.Length; i++)
+            {
+                int flag = 0;
+                for (int j = 0; j < resultArray.Length; j++)
+                {
+                    if (arrayOne[i] == resultArray[j])
+                    {
+                        flag = 1;
+                    }
+                }
+                if (flag == 0)
+                {
+                    resultArray[l] = arrayOne[i];
+                    l++;
+                }
+            }
+
+            for (int i = 0; i < arrayTwo.Length; i++)
+            {
+                int flag = 0;
+                for (int j = 0; j < resultArray.Length; j++)
+                {
+                    if (arrayTwo[i] == resultArray[j])
+                    {
+                        flag = 1;
+                    }
+                }
+                if (flag == 0)
+                {
+                    resultArray[l] = arrayTwo[i];
+                    l++;
+                }
+            }
+
+            for (int i = 0; i < l; i++)
+            {
+                Console.Write(resultArray[i] + " ");
+            }
+            Console.ReadKey();
+        }
+
+        public static void Intersection()
+        {
+            int[] arrayOne = Utility.AcceptElementsFromArray();
+            int[] arrayTwo = Utility.AcceptElementsFromArray();
+            int[] resultArray = new int[arrayOne.Length + arrayTwo.Length];
+            int l = 0;
+            for (int i = 0; i < arrayOne.Length; i++)
+            {
+                for (int j = 0; j < arrayTwo.Length; j++)
+                {
+                    if (arrayOne[i] == arrayTwo[j])
+                    {
+                        resultArray[l] = arrayTwo[j];
+                        l++;
+                    }
+                }
+            }
+
+            for (int i = 0; i < l; i++)
+            {
+                Console.Write(resultArray[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        public static void Difference()
+        {
+            int[] arrayOne = Utility.AcceptElementsFromArray();
+            int[] arrayTwo = Utility.AcceptElementsFromArray();
+            int[] resultArray = new int[arrayOne.Length + arrayTwo.Length];
+            int l = 0;
+            for (int i = 0; i < arrayOne.Length; i++)
+            {
+                int flag = 0;
+                for (int j = 0; j < arrayTwo.Length; j++)
+                {
+                    if (arrayOne[i] == arrayTwo[j])
+                    {
+                        flag = 1;
+                    }
+                }
+                if (flag == 0)
+                {
+                    resultArray[l] = arrayOne[i];
+                    l++;
+                }
+            }
+
+            for (int i = 0; i < l; i++)
+            {
+                Console.Write(resultArray[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+
+        public static MatrixValues AcceptElementFor2DMatrix()
+        {
+            MatrixValues matrixValues = new MatrixValues();
+            Console.WriteLine("Enter the rows for matrix.");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the colums for matrix.");
+            int column = Convert.ToInt32(Console.ReadLine());
+            int[,] arr2d = new int[rows, column];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    arr2d[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            matrixValues.row = rows;
+            matrixValues.column = column;
+            matrixValues.ArrayValues = arr2d;
+            return matrixValues;
+        }
+
+        public static void AdditionOf2DArray()
+        {
+            MatrixValues firstArray = Utility.AcceptElementFor2DMatrix();
+            MatrixValues secondArray = Utility.AcceptElementFor2DMatrix();
+            int[,] resultArray = new int[firstArray.row, firstArray.column];
+            for (int i = 0; i < firstArray.row; i++)
+            {
+                for (int j = 0; j < firstArray.column; j++)
+                {
+                    resultArray[i, j] = firstArray.ArrayValues[i, j] + secondArray.ArrayValues[i, j];
+                }
+            }
+
+            for (int i = 0; i < firstArray.row; i++)
+            {
+                for (int j = 0; j < firstArray.column; j++)
+                {
+                    Console.Write(resultArray[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+        public struct MatrixValues
+        {
+            public int row;
+            public int column;
+            public int[,] ArrayValues;
+        }
+
+        public static void BubbleSort()
+        {
+            int[] arrayElements = Utility.AcceptElementsFromArray();
+            for (int i = 0; i < arrayElements.Length; i++)
+            {
+                for (int j = 0; j < arrayElements.Length - 1; j++)
+                {
+                    if (arrayElements[j] > arrayElements[j + 1])
+                    {
+                        int temp = arrayElements[j + 1];
+                        arrayElements[j + 1] = arrayElements[j];
+                        arrayElements[j] = temp;
+                    }
+                }
+            }
+
+            for (int i = 0; i < arrayElements.Length; i++)
+            {
+                Console.Write(arrayElements[i] + " ");
+            }
+            Console.ReadKey();
+        }
+
+        public static void SelectionSort()
+        {
+            int[] arrayElements = Utility.AcceptElementsFromArray();
+            int val = 0;
+            int val1 = 0;
+            // 2 4 5 1 2 6
+            for (int i = 0; i < arrayElements.Length; i++)
+            {
+                int min = arrayElements[val];
+                int minIndex = 0;
+                for (int j = val; j < arrayElements.Length; j++)
+                {
+                    if (arrayElements[j] < min)
+                    {
+                        minIndex = j;
+                        min = arrayElements[j];
+                    }
+                }
+                int temp = arrayElements[i];
+                val++;
+                arrayElements[i] = arrayElements[minIndex];
+                arrayElements[minIndex] = arrayElements[i];
+            }
+
+            for (int i = 0; i < arrayElements.Length; i++)
+            {
+                Console.Write(arrayElements[i]+" ");
+            }
             Console.ReadKey();
         }
     }
